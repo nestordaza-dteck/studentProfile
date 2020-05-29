@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-create-profile',
@@ -9,17 +9,16 @@ import { FormBuilder, FormGroup } from '@angular/forms'
 export class CreateProfileComponent implements OnInit {
 
   createProfileForm: FormGroup;
-
   constructor(private formBuilder: FormBuilder) {
     this.createProfileForm = this.formBuilder.group({
-      studentId: [''],
-      firstName: [''],
-      lastName: [''],
-      email: [''],
-      dob: [''],
-      gender: [''],
-      address: [''],
-      description: ['']
+      studentId: ['', [Validators.required, Validators.maxLength(8)]],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      dob: ['', Validators.required],
+      gender: ['', Validators.required],
+      address: ['', Validators.required],
+      description: ['', Validators.required]
     })
   }
 

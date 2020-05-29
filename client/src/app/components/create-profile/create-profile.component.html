@@ -25,39 +25,80 @@
                             <form [formGroup]="createProfileForm" #formDirective="ngForm">
                                 <div class="form-group">
                                     <input type="text" class="form-control" formControlName="studentId"
-                                        placeholder="Student ID">
+                                        placeholder="Student ID"
+                                        [ngClass]="{ 'is-invalid' : formControls.studentId.errors && formControls.studentId.touched}">
+                                    <div *ngIf="formControls.studentId.errors" class="invalid-feedback">
+                                        <div *ngIf="formControls.studentId.errors.required" class="pl-1">Student Id is required</div>
+                                        <div *ngIf="formControls.studentId.errors.maxlength" class="pl-1">Limit: Maximum 8 numbers</div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" formControlName="firstName"
-                                        placeholder="First Name">
+                                        placeholder="First Name"
+                                        [ngClass]="{ 'is-invalid': formControls.firstName.errors && formControls.firstName.touched}">
+                                    <div *ngIf="formControls.firstName.errors"
+                                        class="invalid-feedback">
+                                        <div *ngIf="formControls.firstName.errors.required" class="pl-1">First name is required</div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" formControlName="lastName"
-                                        placeholder="Last Name">
+                                        placeholder="Last Name"
+                                        [ngClass]="{ 'is-invalid': formControls.lastName.touched && formControls.lastName.errors }">
+                                    <div *ngIf="formControls.lastName.errors" class="invalid-feedback">
+                                        <div *ngIf="formControls.lastName.errors.required" class="pl-1">Last name is required</div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control" formControlName="email"
-                                        placeholder="Email Address">
+                                        placeholder="Email Address"
+                                        [ngClass]="{ 'is-invalid': formControls.email.touched && formControls.email.errors }">
+                                    <div *ngIf="formControls.email.errors" class="invalid-feedback">
+                                        <div *ngIf="formControls.email.errors.required" class="pl-1">Email is
+                                            required</div>
+                                        <div *ngIf="formControls.email.errors.email" class="pl-1">Email is
+                                            not in correct format</div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="date" class="form-control" formControlName="dob"
-                                        placeholder="Date of Birth">
+                                        placeholder="Date of Birth"
+                                        [ngClass]="{ 'is-invalid': formControls.dob.touched && formControls.dob.errors }">
+                                    <div *ngIf="formControls.dob.errors" class="invalid-feedback">
+                                        <div *ngIf="formControls.dob.errors.required" class="pl-1">Date of Birth is required</div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control" formControlName="gender">
+                                    <select class="form-control" formControlName="gender"
+                                        [ngClass]="{ 'is-invalid': formControls.gender.touched && formControls.gender.errors }">
                                         <option value="" disabled>Gender</option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
                                     </select>
+                                    <div *ngIf="formControls.gender.errors" class="invalid-feedback">
+                                        <div *ngIf="formControls.gender.errors.required" class="pl-1">Gender is
+                                            required</div>
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
                                     <textarea class="form-control" formControlName="description"
-                                        placeholder="About yourself" rows="3" cols="50"></textarea>
+                                        placeholder="About yourself" rows="3" cols="50"
+                                        [ngClass]="{ 'is-invalid': formControls.description.touched && formControls.description.errors }"></textarea>
+                                    <div *ngIf="formControls.description.errors"
+                                        class="invalid-feedback">
+                                        <div *ngIf="formControls.description.errors.required" class="pl-1">About
+                                            yourself is required</div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" formControlName="address"
-                                        placeholder="Enter your address">
+                                        placeholder="Enter your address"
+                                        [ngClass]="{ 'is-invalid': formControls.address.touched && formControls.address.errors }">
+                                    <div *ngIf="formControls.address.errors" class="invalid-feedback">
+                                        <div *ngIf="formControls.address.errors.required" class="pl-1">Address is
+                                            required</div>
+                                    </div>
                                 </div>
 
                                 <div class="form-group d-flex justify-content-center">
