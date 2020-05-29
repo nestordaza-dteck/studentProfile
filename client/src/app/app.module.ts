@@ -18,7 +18,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ViewProfileComponent
   ],
   imports: [
-    
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,

@@ -27,7 +27,9 @@
                         <td>{{ profile.studentId }}</td>
                         <td>{{ profile.firstName }} {{profile.lastName}}</td>
                         <td>{{ profile.email }}</td>
-                        <td><a routerLink="/view-profile/{{ profile.studentId }}"><i class="far fa-eye view"></i></a></td>
+                        <td><a routerLink="/view-profile/{{ profile.studentId }}"><i class="far fa-eye"></i></a>
+                            <a class="ml-3" (click)="removeProfile(profile.studentId)"><i
+                                    class="far fa-trash-alt"></i></a></td>
                     </tr>
                 </tbody>
             </table>

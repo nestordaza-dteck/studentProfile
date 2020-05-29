@@ -49,7 +49,7 @@ export class CreateProfileComponent implements OnInit {
 
   addProfile() {
     let profileData = {};
-    
+
     //Creating an array of form control objects
     let controls = Object.keys(this.createProfileForm.controls);
 
@@ -81,5 +81,12 @@ export class CreateProfileComponent implements OnInit {
     this.profileService.getProfiles().subscribe(res => {
       this.profiles = res;
     }, error => console.log(error));
+  }
+
+  removeProfile(id: string) {
+    this.profileService.removeProfile(id)
+      .subscribe(res => {
+        this.getProfiles();
+      }, error => console.log(error));
   }
 }

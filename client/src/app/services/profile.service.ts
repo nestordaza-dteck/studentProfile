@@ -27,4 +27,9 @@ export class ProfileService {
             .pipe(catchError(this.processHTTPService.handleError));
     }
 
+    removeProfile(id): Observable<Profile> {
+        return this.http.delete<Profile>(baseURL + 'profiles/' + id)
+            .pipe(catchError(this.processHTTPService.handleError));
+    }
+
 }
