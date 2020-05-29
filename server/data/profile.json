@@ -1,6 +1,6 @@
 [
     {
-        "studentId": 40084105,
+        "studentId": "40084105",
         "firstName": "Charles",
         "lastName": "Augustin",
         "dob": "12/05/1993",
@@ -10,7 +10,7 @@
         "address": "1234 NorthCliffe Av Apt: 22, Montreal, QC H4A3K7"
     },
     {
-        "studentId": 4006859,
+        "studentId": "4006859",
         "firstName": "Jayaprakash",
         "lastName": "Kumar",
         "dob": "21/04/1992",
@@ -20,7 +20,7 @@
         "address": "34 Chevrolet Av Apt-5, Verdun, QC G1A2P6"
     },
     {
-        "studentId": 40098566,
+        "studentId": "40098566",
         "firstName": "Jerusha",
         "lastName": "Campbell",
         "dob": "12/09/1994",
@@ -28,5 +28,25 @@
         "gender": "Female",
         "description": "Aspiring Data Scientist and BI Developer",
         "address": "19-A, Periyar Street, Chennai, INDIA 600052"
+    },
+    {
+        "studentId": "40098453",
+        "firstName": "Mathews",
+        "lastName": "Edward",
+        "email": "mathews@gmail.com",
+        "dob": "2020-05-30",
+        "gender": "Male",
+        "address": "Sardar Patel Road, Chennai, INDIA",
+        "description": "Creative Content Creater & Web Designer"
+    },
+    {
+        "studentId": "4025565",
+        "firstName": "Anna",
+        "lastName": "George",
+        "email": "anna@ymail.com",
+        "dob": "2020-05-30",
+        "gender": "Female",
+        "address": "Chennai. Tamilnadu,INDIA",
+        "description": "Software developer"
     }
 ]

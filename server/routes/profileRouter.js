@@ -38,6 +38,21 @@ profileRouter.route('/')
         })
     });
 
+profileRouter.route('/:studentId')
+    .options(cors.corsWithOptions, (req, res) => { res.sendStatus = 200; })
+    .get(cors.cors, (req, res, next) => {
+        fs.readFile(path, 'utf8', (err, data) => {
+            if (err) {
+                throw err;
+            }
+            let profiles = JSON.parse(data);
+            profiles = profiles.filter(a => {
+               return a.studentId == req.params.studentId
+            });
+            res.send(profiles);
+        }, err => next(err));
+    });
+
 function checkDuplicate(propertyName, propertyValue, inputArray) {
     let duplicateFlag = 0;
 

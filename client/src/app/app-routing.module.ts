@@ -5,7 +5,7 @@ import { ViewProfileComponent } from './components/view-profile/view-profile.com
 
 const routes: Routes = [
   { path: 'create-profile', component: CreateProfileComponent },
-  { path: 'view-profile/:studentName', component: ViewProfileComponent },
+  { path: 'view-profile/:studentId', component: ViewProfileComponent },
   { path: '', redirectTo: 'create-profile' , pathMatch:'full'}
 ];
 

@@ -22,4 +22,9 @@ export class ProfileService {
             .pipe(catchError(this.processHTTPService.handleError));
     }
 
+    getProfileDetails(id): Observable<Profile> {
+        return this.http.get<Profile>(baseURL + 'profiles/' + id)
+            .pipe(catchError(this.processHTTPService.handleError));
+    }
+
 }
