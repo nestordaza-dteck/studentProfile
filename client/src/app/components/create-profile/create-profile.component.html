@@ -91,8 +91,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="date" class="form-control" formControlName="dob"
-                                        placeholder="Date of Birth"
+                                    <input type="text" class="form-control" formControlName="dob"
+                                        placeholder="Date of Birth" onfocus="this.type='date'" onblur="this.type ='text'"
                                         [ngClass]="{ 'is-invalid': formControls.dob.touched && formControls.dob.errors }">
                                     <div *ngIf="formControls.dob.errors" class="invalid-feedback">
                                         <div *ngIf="formControls.dob.errors.required" class="pl-1">Date of Birth is

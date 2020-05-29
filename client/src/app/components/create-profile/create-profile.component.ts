@@ -12,7 +12,7 @@ import { Profile } from 'src/app/model/profile';
 export class CreateProfileComponent implements OnInit {
 
   createProfileForm: FormGroup;
-
+  placeholder: string = "Date of Birth";
   @ViewChild('closeButton', {
     static: false
   }) closeButton;
@@ -86,6 +86,7 @@ export class CreateProfileComponent implements OnInit {
   removeProfile(id: string) {
     this.profileService.removeProfile(id)
       .subscribe(res => {
+        this.toastr.success('Record Deleted Successfully');
         this.getProfiles();
       }, error => console.log(error));
   }
