@@ -1,1 +1,76 @@
-<p>create-profile works!</p>
+<!-- Button trigger modal -->
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 mt-4">
+            <button type="button" class="mt-2 btn btn-primary float-right" data-toggle="modal"
+                data-target="#createProfileModal">
+                Create a New Profile
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="createProfileModal" tabindex="-1" role="dialog" aria-labelledby="profileLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h5 class="modal-title w-100" id="profileLabel">Create Profile</h5>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <form [formGroup]="createProfileForm" #formDirective="ngForm">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="studentId"
+                                        placeholder="Student ID">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="firstName"
+                                        placeholder="First Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="lastName"
+                                        placeholder="Last Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" formControlName="email"
+                                        placeholder="Email Address">
+                                </div>
+                                <div class="form-group">
+                                    <input type="date" class="form-control" formControlName="dob"
+                                        placeholder="Date of Birth">
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" formControlName="gender">
+                                        <option value="" disabled>Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <textarea class="form-control" formControlName="description"
+                                        placeholder="About yourself" rows="3" cols="50"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="address"
+                                        placeholder="Enter your address">
+                                </div>
+
+                                <div class="form-group d-flex justify-content-center">
+                                    <button type="button" class="btn btn-secondary mr-4"
+                                        (click)="resetForm()">Clear</button>
+                                    <button class="btn btn-success"
+                                        [disabled]="!createProfileForm.valid">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
