@@ -17,4 +17,9 @@ export class ProfileService {
             .pipe(catchError(this.processHTTPService.handleError));
     }
 
+    getProfiles(): Observable<Profile[]> {
+        return this.http.get<Profile[]>(baseURL + 'profiles')
+            .pipe(catchError(this.processHTTPService.handleError));
+    }
+
 }

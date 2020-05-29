@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { ProfileService } from 'src/app/services/profile.service';
 import { ToastrService } from 'ngx-toastr';
+import { Profile } from 'src/app/model/profile';
 
 @Component({
   selector: 'app-create-profile',
@@ -14,7 +15,9 @@ export class CreateProfileComponent implements OnInit {
   @ViewChild('closeButton', {
     static: false
   }) closeButton;
-  
+
+  profiles: Profile[];
+
   constructor(private formBuilder: FormBuilder, private profileService: ProfileService, private toastr: ToastrService) {
     this.createProfileForm = this.formBuilder.group({
       studentId: ['', [Validators.required, Validators.maxLength(8)]],
@@ -29,6 +32,7 @@ export class CreateProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getProfiles();
   }
 
   // Get Form Controls for Validation
@@ -64,5 +68,13 @@ export class CreateProfileComponent implements OnInit {
 
   close() {
     this.closeButton.nativeElement.click();
+  }
+
+  getProfiles() {
+    this.profileService.getProfiles().subscribe(res => {
+      this.profiles = res;
+      console.log(res);
+
+    }, error => console.log(error));
   }
 }
