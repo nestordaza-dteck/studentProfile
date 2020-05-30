@@ -53,6 +53,12 @@ Please find the screenshot below.
 
 3. Variables, Methods & Routers(Server) are named in camelCase format.
 
+## REST End Points
+
+1. GET - "/profiles", "/profiles/:studentId"
+2. POST - "/profiles"
+3. DELETE - "/profiles/:studentId"
+
 ## UI Screens
 
 ![Student Profile](https://github.com/charles-augustin/studentProfile/blob/master/screenshots/Student_Profile.PNG)
