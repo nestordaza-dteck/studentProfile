@@ -31,7 +31,7 @@ https://angular.io/guide/setup-local
 
 1. Created a Reactive Model driven forms that supports real time validation (i.e) validation performed by manipulating DOM using touched, pristine, dirty..
 
-Find the screenshot below.
+Please find the screenshot below.
 
 ![Student Profile Form](https://github.com/charles-augustin/studentProfile/blob/master/screenshots/Forms.PNG)
 
